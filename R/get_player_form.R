@@ -1,4 +1,3 @@
-library(dplyr)
 
 #' Get Player form data
 #'
@@ -12,13 +11,13 @@ library(dplyr)
 #' get_player_form("2016-03-01", 6, 20)
 get_player_form <- function(since, min_games = 6, min_av_points = 20) {
   df <- get_nba_data()
-  by_player <- group_by(df[df$GAME_DATE > since,], PLAYER_NAME, TEAM_NAME)
-  mins_to_points <- summarise(by_player,
+  by_player <- dplyr::group_by(df[df$GAME_DATE > since,], PLAYER_NAME, TEAM_NAME)
+  mins_to_points <- dplyr::summarise(by_player,
                               games = n(),
                               av_points = mean(points),
                               correlation = cor(points, MIN))
   
-  form <- summarise(by_player,
+  form <- dplyr::summarise(by_player,
                     games = n(),
                     av_points = mean(points),
                     correlation = cor(points, as.numeric(GAME_DATE)))

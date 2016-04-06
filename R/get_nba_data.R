@@ -1,4 +1,3 @@
-library(jsonlite)
 
 #' Get NBA Game Data
 #'
@@ -14,7 +13,7 @@ get_nba_data <- function() {
             "OREB", "DREB", "REB", "AST", "STL", "BLK", "TOV", "PF", "PTS", "PLUS_MINUS",
             "VIDEO_AVAILABLE")
 
-  data <- fromJSON("https://s3-eu-west-1.amazonaws.com/nba-processed/processed-2015_16_players.json")
+  data <- jsonlite::fromJSON("https://s3-eu-west-1.amazonaws.com/nba-processed/processed-2015_16_players.json")
   colnames(data) <- rows
   data <- as.data.frame(data)
 

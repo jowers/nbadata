@@ -9,5 +9,6 @@ License: MIT
 LazyData: true
 Imports:
     jsonlite,
-    dplyr
+    dplyr,
+    memoise
 RoxygenNote: 5.0.1.9000

@@ -1,12 +1,11 @@
 
-#' Get NBA Game Data
+#' Actually get the data
 #'
-#' This function allows you to get player by player game data from NBA Games
+#' This function gets the data for nba players
 #' @return A Data Frame containing the NBA Data
-#' @export
 #' @examples
-#' get_nba_data()
-get_nba_data <- function() {
+#' do_get_nba_data()
+do_get_nba_data <- function() {
   rows <- c("SEASON_ID", "PLAYER_ID", "PLAYER_NAME", "TEAM_ABBREVIATION",
             "TEAM_NAME", "GAME_ID", "GAME_DATE", "MATCHUP", "WL", "MIN", "FGM",
             "FGA", "FG_PCT", "FG3M", "FG3A", "FG3_PCT", "FTM", "FTA", "FT_PCT",
@@ -27,4 +26,13 @@ get_nba_data <- function() {
   
   data
 }
+
+#' Get NBA Game Data
+#'
+#' This function allows you to get player by player game data from NBA Games
+#' @return A Data Frame containing the NBA Data
+#' @export
+#' @examples
+#' get_nba_data()
+get_nba_data <- memoise::memoise(do_get_nba_data)
 

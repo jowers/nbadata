@@ -1,0 +1,13 @@
+Package: nbadata
+Title: NBA Data Package
+Version: 0.0.0.9000
+Authors@R: person("Jonathan", "Owers", email = "jonathan.owers@gmail.com", role = c("aut", "cre"))
+Description: Loads and provides views on stats from the nba.
+Depends:
+    R (>= 3.2.1)
+License: MIT
+LazyData: true
+Imports:
+    jsonlite,
+    dplyr
+RoxygenNote: 5.0.1.9000

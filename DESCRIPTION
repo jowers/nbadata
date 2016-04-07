@@ -10,5 +10,6 @@ LazyData: true
 Imports:
     jsonlite,
     dplyr,
-    memoise
+    memoise,
+    zoo
 RoxygenNote: 5.0.1.9000
